@@ -1,0 +1,46 @@
+// Custom Fonts
+
+.font-face(@font) {
+
+  @splitter: `function(s) {
+    return s.replace(/\W/g, '');
+  }`;
+
+  @fontWeight: `function(s) {
+    s = s.toLowerCase();
+    return (s.indexOf('bold') == -1) ? 'normal' : 'bold';
+  }`;
+
+  @fontStyle: `function(s) {
+    s = s.toLowerCase();
+    return (s.indexOf('italic') == -1) ? 'normal' : 'italic';
+  }`;
+
+  @fontName: `(@{splitter})(@{font})`;
+
+  @fontFamily: `function(s) {
+    return s.replace(' Bold', '').replace(' Italic', '');
+  }`;
+
+  @font-face {
+    font-family: '`(@{fontFamily})(@{font})`';
+    src: url('@{font-path}@{fontName}.eot');
+    src: local(@font),
+    url('@{font-path}@{fontName}.eot?#iefix')  format('embedded-opentype'),
+    url('@{font-path}@{fontName}.woff')        format('woff'),
+    url('@{font-path}@{fontName}.ttf')         format('truetype'),
+    url('@{font-path}@{fontName}.svg#@{font}') format('svg');
+    font-weight: ~'`(@{fontWeight})(@{font})`';
+    font-style: ~'`(@{fontStyle})(@{font})`';
+  }
+}
+
+// End of
+
+// Default list element reset
+
+.list-reset() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
