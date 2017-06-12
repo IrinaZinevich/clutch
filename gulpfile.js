@@ -1,16 +1,21 @@
-var gulp        = require('gulp'),
-    less        = require('gulp-less'),
-    browserSync = require('browser-sync'),
-    normalize   = require('normalize'),
-
-    concat      = require('gulp-concat'),
-    uglify      = require('gulp-uglifyjs');
-
+var gulp            = require('gulp'),
+    less            = require('gulp-less'),
+    browserSync     = require('browser-sync'),
+    
+    concat          = require('gulp-concat'),
+    uglify          = require('gulp-uglifyjs'),
+    
+    del             = require('del'),
+    autoprefixer    = require('gulp-autoprefixer');
 
 
 gulp.task('less', function () {
     return gulp.src('app/less/*.less')
         .pipe(less())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions', 'ie 10'],
+            cascade: false
+        }))
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({stream:true}))
 });
@@ -36,3 +41,24 @@ gulp.task('watch', ['browser-sync', 'less', 'scripts'], function () {
     gulp.watch('app/*.html', browserSync.reload);
     gulp.watch('app/js/**/*.js', browserSync.reload);
 });
+
+gulp.task('clean', function () {
+    del.sync('dist');
+});
+
+gulp.task('build',['less', 'scripts'], function () {
+
+    var buildCss = gulp.src('app/css/main.css')
+        .pipe(gulp.dest('dist/css'));
+
+    var buildFonts = gulp.src('app/fonts/**/*.css')
+        .pipe(gulp.dest('dist/fonts'));
+
+    var buildJS = gulp.src('app/js/**/*')
+        .pipe(gulp.dest('dist/js'));
+
+    var buildHtml = gulp.src('app/*.html')
+        .pipe(gulp.dest('dist'))
+});
+
+gulp.task('default', ['watch']);
