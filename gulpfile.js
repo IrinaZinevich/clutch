@@ -1,19 +1,17 @@
 var gulp            = require('gulp'),
     less            = require('gulp-less'),
     browserSync     = require('browser-sync'),
-    
+    autoprefixer    = require('gulp-autoprefixer'),
     concat          = require('gulp-concat'),
     uglify          = require('gulp-uglifyjs'),
-    
-    del             = require('del'),
-    autoprefixer    = require('gulp-autoprefixer');
+    del             = require('del');
 
 
 gulp.task('less', function () {
     return gulp.src('app/less/*.less')
         .pipe(less())
         .pipe(autoprefixer({
-            browsers: ['last 2 versions', 'ie 10'],
+            browsers: ['last 2 versions'],
             cascade: false
         }))
         .pipe(gulp.dest('app/css'))
