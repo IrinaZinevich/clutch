@@ -1,8 +1,9 @@
 .header {
   position: relative;
   height: 112px;
-  padding-left: 240px;
+  padding-left: 358px;
   background: url('@{image-path}header_bg.png') no-repeat center right;
+  border-bottom: 1px solid darken(@white, 8%);
   font-size: 0;
 
   &__logo {
@@ -14,65 +15,7 @@
     background: url('@{image-path}clutch_logo.svg') no-repeat center right;
   }
 
-  &-social {
-    display: inline-block;
-    vertical-align: middle;
-
-    &__icon {
-      display: inline-flex;
-      vertical-align: middle;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-
-      & + & {
-        margin-left: 5px;
-      }
-
-      &:before {
-        content: '';
-        margin: auto;
-        width: 20px;
-        height: 20px;
-        background: url('@{image-path}icons.png') no-repeat;
-      }
-
-      &_fb {
-        background-color: #44499e;
-        
-        &:before {
-          width: 14px;
-          height: 18px;
-          background-position: 0 0;
-        }
-      }
-
-      &_telegram {
-        background-color: #3ab0ec;
-
-        &:before {
-          width: 26px;
-          height: 20px;
-          background-position: 0 -18px;
-        }
-      }
-
-      &_instagram {
-        background-color: #ac95ee;
-
-        &:before {
-          width: 22px;
-          height: 19px;
-          background-position: 0 -38px;
-        }
-      }
-    }
-  }
-
   &-search {
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
     margin-left: 5px;
     height: 100%;
 
@@ -81,7 +24,12 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background-color: #2c272d;
+      background-color: @default-search;
+      .transition;
+
+      &:hover {
+        background-color: darken(@default-search, 20%);
+      }
 
       &:before {
         content: '';
@@ -96,32 +44,55 @@
     &__icon {
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
+      margin-top: -18px;
       cursor: pointer;
     }
 
     &-form {
+      display: none;
+      opacity: 0;
+      width: 0;
+      position: relative;
       height: 100%;
-      background: white;
-      width: 100%;
+      padding-right: 40px;
+      background-color: @white;
+      .transition('all', 'ease-in', '.4s');
+
+      &.is-shown{
+        display: block;
+        opacity: 1;
+        width: 100%;
+      }
+
+      &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+      }
     }
 
     &__input {
-      padding: 10px 15px;
-      border: none;
+      display: inline-block;
+      vertical-align: middle;
+      width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
       border-bottom: 2px dashed @default;
+      font-size: 14px;
+      font-family: 'NotoSerifItalic';
+      color: darken(@white,45%);
 
       &::-webkit-input-placeholder {
-        font-family: 'NotoSerifItalic';
-        font-size: 12px;
-        color: darken(@white,45%);
 
       }
     }
 
     &__button {
-
+      position: absolute;
+      top: 50%;
+      margin-top: -18px;
+      right: 0;
     }
-
   }
 }

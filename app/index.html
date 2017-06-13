@@ -10,30 +10,63 @@
     <div class="wrapper">
         <header class="header">
             <a href="/" class="header__logo"></a>
-            <div class="header-social">
-                <a href="#" target="_blank" class="header-social__icon header-social__icon_fb"></a>
-                <a href="#" target="_blank" class="header-social__icon header-social__icon_telegram"></a>
-                <a href="#" target="_blank" class="header-social__icon header-social__icon_instagram"></a>
+            <div class="social social_header">
+                <a href="#" target="_blank" class="social__icon social__icon_fb"></a>
+                <a href="#" target="_blank" class="social__icon social__icon_telegram"></a>
+                <a href="#" target="_blank" class="social__icon social__icon_instagram"></a>
             </div>
             <div class="header-search">
                 <form action="" class="header-search-form">
-                    <input class="header-search__input" placeholder="Что будем искать?"/>
+                    <input type="text" class="header-search__input" placeholder="Что будем искать?"/>
                     <button class="header-search__button" type="submit"></button>
                 </form>
                 <span class="header-search__icon"></span>
             </div>
         </header>
-        <nav class="menu">
-            <ul class="menu-list">
-                <li class="menu-list-item">
-                    <a href="#" class="menu-list-item__link"></a>
-                    <ul class="menu-inner-list">
-                        <li class="menu-inner-list-item">
-                            <a href="#" class="menu-inner-list-item__link"></a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+        <nav class="menu is-fixed">
+            <div class="menu-content">
+                <a href="/" class="menu__logo"></a>
+                <ul class="menu-list">
+                    <li class="menu-list-item">
+                        <a href="#" class="menu-list-item__link">Шоу-биз</a>
+                    </li>
+                    <li class="menu-list-item">
+                        <a href="#" class="menu-list-item__link">Культура</a>
+                    </li>
+                    <li class="menu-list-item">
+                        <a href="#" class="menu-list-item__link">Мода</a>
+                    </li>
+                    <li class="menu-list-item">
+                        <a href="#" class="menu-list-item__link">Красота</a>
+                    </li>
+                    <li class="menu-list-item">
+                        <a href="#" class="menu-list-item__link">Дети</a>
+                        <ul class="menu-inner-list">
+                            <li class="menu-inner-list-item">
+                                <a href="#" class="menu-inner-list-item__link">Беременность</a>
+                            </li>
+                            <li class="menu-inner-list-item">
+                                <a href="#" class="menu-inner-list-item__link">Роды</a>
+                            </li>
+                            <li class="menu-inner-list-item">
+                                <a href="#" class="menu-inner-list-item__link">Развитие</a>
+                            </li>
+                            <li class="menu-inner-list-item">
+                                <a href="#" class="menu-inner-list-item__link">Обучение</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-list-item">
+                        <a href="#" class="menu-list-item__link">Lifestyle</a>
+                    </li>
+                    <li class="menu-list-item">
+                        <a href="#" class="menu-list-item__link">Foodstyle</a>
+                    </li>
+                    <li class="menu-list-item">
+                        <a href="#" class="menu-list-item__link">Личное</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
         <main class="main">
             <section class="section">
@@ -128,16 +161,33 @@
             </div>
         </main>
         <footer class="footer">
-            <a href="#" class="footer-logo">
-                <img src="#" alt="Clutch logo" class="footer-logo__img">
-            </a>
+            <a href="#" class="footer__logo"></a>
             <div class="footer-copyright">
                 <span class="footer-copyright__text">&copy; 2017 CLUTCH</span>
             </div>
-            <div class="footer-social">
-                <a href="#" target="_blank" class="footer-social__icon footer-social__icon_fb"></a>
-                <a href="#" target="_blank" class="footer-social__icon footer-social__icon_telegram"></a>
-                <a href="#" target="_blank" class="footer-social__icon footer-social__icon_instagram"></a>
+            <div class="footer-nav">
+                <ul class="footer-nav-list">
+                    <li class="footer-nav-list-item">
+                        <a href="#" class="footer-nav__link">главная</a>
+                    </li>
+                    <li class="footer-nav-list-item">
+                        <a href="#" class="footer-nav__link">О нас</a>
+                    </li>
+                    <li class="footer-nav-list-item">
+                        <a href="#" class="footer-nav__link">КОНТАКТЫ</a>
+                    </li>
+                    <li class="footer-nav-list-item">
+                        <a href="#" class="footer-nav__link">РЕКЛАМА</a>
+                    </li>
+                    <li class="footer-nav-list-item">
+                        <a href="#" class="footer-nav__link">ПРАВИЛА</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="social social_footer">
+                <a href="#" target="_blank" class="social__icon social__icon_fb"></a>
+                <a href="#" target="_blank" class="social__icon social__icon_telegram"></a>
+                <a href="#" target="_blank" class="social__icon social__icon_instagram"></a>
             </div>
         </footer>
     </div>

@@ -1,11 +1,99 @@
 .menu {
+  background-color: @white;
+  border-bottom: 1px solid darken(@white, 8%);
+  font-family: 'RalewayBold';
+
+  &.is-fixed {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    .box-shadow;
+
+    .menu {
+
+      &-content {
+        padding-left: 145px;
+        box-sizing: border-box;
+      }
+
+      &__logo {
+        display: block;
+      }
+    }
+  }
+
+  &-content {
+    position: relative;
+    width: 1260px;
+    margin: auto;
+  }
+
+  &__logo {
+    display: none;
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 100px;
+    height: 50px;
+    background: url('@{image-path}clutch_logo.svg') no-repeat center right;
+  }
 
   &-list {
+    .list-reset;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    font-size: 0;
 
     &-item {
+      display: table-cell;
+      position: relative;
 
       &__link {
+        display: block;
+        padding: 24px;
+        text-align: center;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: @default-gray;
+        text-decoration: none;
+      }
 
+      &:hover {
+        box-shadow: 12px 0 20px -8px #dddddd, -12px 0 20px -8px #dddddd;
+      }
+
+      &:hover .menu-inner-list{
+        display: block;
+      }
+
+      &:hover:before,
+      &:hover:after{
+        opacity: 1;
+      }
+
+      &:before, &:after {
+        opacity: 0;
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+      }
+
+      &:before {
+        left: 0;
+        border-left: 10px solid @default;
+      }
+
+      &:after {
+        right: 0;
+        border-right: 10px solid @default;
       }
     }
   }
@@ -13,11 +101,32 @@
   &-inner {
 
     &-list {
+      display: none;
+      .list-reset;
+      position: absolute;
+      min-width: 260px;
+      padding: 22px 45px;
+      box-sizing: border-box;
+      background-color: @white;
+      box-shadow: 12px 10px 20px -8px #dddddd, -12px 10px 20px -8px #dddddd;
 
       &-item {
 
-        &__link {
+        & + & {
+          margin-top: 15px;
+        }
 
+        &__link {
+          display: block;
+          font-size: 16px;
+          text-transform: uppercase;
+          color: @default-gray;
+          text-decoration: none;
+          .transition('color');
+
+          &:hover {
+            color: #d0d2dd;
+          }
         }
       }
     }

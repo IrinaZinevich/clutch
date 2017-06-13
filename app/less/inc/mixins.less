@@ -35,7 +35,6 @@
   }
 }
 
-// End of
 
 // Default list element reset
 
@@ -43,4 +42,13 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.transition(@property: 'all', @easing: 'linear', @duration: '.2s') {
+  -webkit-transition: ~'@{property} @{easing} @{duration}';
+  transition: ~'@{property} @{easing} @{duration}';
+}
+
+.box-shadow(@x: '0', @y: '2px', @blur: '20px', @size: '1px', @color: '#dddddd;'){
+  box-shadow: ~'@{x} @{y} @{blur} @{size} @{color}';
 }
