@@ -1,7 +1,125 @@
 .feed {
 
+  &.news {
+    border-top: 3px dashed @default;
+    border-bottom: 3px dashed @default;
+    border-right: 3px dashed @default;
+
+    .feed {
+
+      &-capture {
+
+        &-content {
+          padding-bottom: 0;
+          border: none;
+          margin-top: -7px;
+        }
+
+        &__text {
+          font-size: 18px;
+
+          &:after {
+            top: 4px;
+          }
+        }
+      }
+    }
+  }
+
   &-capture {
 
-    &__text {}
+    &-content {
+      padding-bottom: 30px;
+      border-top: 5px dashed @default;
+      border-right: 5px dashed @default;
+    }
+
+    &__text {
+      display: inline-block;
+      position: relative;
+      margin-top: -22px;
+      padding: 4px 30px 4px 20px;
+      font-size: 22px;
+      font-family: 'OpenSans';
+      text-transform: uppercase;
+      text-decoration: none;
+      color: @default-gray;
+      background: linear-gradient(to right, #fff200 0%,#fff200 35px,rgba(255,255,255,1) 35px,rgba(255,255,255,1) 100%);
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 100%;
+        width: 40px;
+        height: 30px;
+        margin-left: 5px;
+        background: url('@{image-path}icons.png') no-repeat;
+        background-position: 0 -77px;
+      }
+
+    }
+  }
+
+  &-overlay {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    background-color: fadeout(@black, 50%);
+    .transition;
+
+    &-content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-top: 3px solid @default;
+      border-right: 3px solid @default;
+      border-left: 3px solid @default;
+
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        width: calc(~'50% - 60px');
+        bottom: -3px;
+        border-bottom: 3px solid @default;
+      }
+
+      &:before {
+        left: -3px;
+      }
+
+      &:after {
+        right: -3px;
+      }
+    }
+
+    &__title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: -45px;
+      font-family: 'OswaldRegular';
+      font-size: 12px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: darken(@white, 40%);
+    }
+
+    &__link {
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'OswaldRegular';
+      font-size: 16px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: @white;
+    }
   }
 }

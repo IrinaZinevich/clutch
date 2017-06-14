@@ -1,13 +1,57 @@
 .include {
+  position: relative;
+  padding: 70px 35px 0;
+  box-sizing: border-box;
+  text-align: center;
+  height: 560px;
+  background: url('@{image-path}include_bg.png') no-repeat center;
 
-  &__capture {}
-
-  &-figure {
-
-    &__image {}
+  &_calendar {
+    height: 320px;
+    background: url('@{image-path}calendar_bg.jpg') no-repeat center;
   }
 
-  &__link {}
+  &__capture {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    padding: 6px 20px;
+    white-space: nowrap;
+    font-size: 13px;
+    font-family: 'OpenSans';
+    text-transform: uppercase;
+    background-color: @default;
+    color: @default-gray;
+  }
 
-  &__title {}
+  &-figure {
+    display: inline-block;
+    .box-shadow;
+
+    &__image {
+      display: block;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    margin-top: 170px;
+    padding: 10px 40px;
+    border: 3px solid @default;
+    font-family: 'OswaldRegular';
+    font-size: 13px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: @default-gray;
+  }
+
+  &__title {
+    display: inline-block;
+    margin-top: 50px;
+    font-family: 'RalewayBold';
+    font-size: 24px;
+    color: @default-gray;
+    text-decoration: none;
+  }
 }

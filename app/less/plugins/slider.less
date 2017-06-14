@@ -1,77 +1,33 @@
-.articles {
+.slider {
   font-size: 0;
+
+  &-container {
+    width: 100%;
+    overflow: hidden;
+  }
 
   &-list {
     .list-reset;
-    margin-left: -20px;
-    margin-top: -36px;
-
-    &_inversed .articles {
-
-      &-list-item {
-        float: right;
-      }
-    }
+    width: 9999px;
+    white-space: nowrap;
 
     &-item {
-      float: left;
-      width: 300px;
-      margin-left: 20px;
-      margin-top: 36px;
-
-      &_big {
-        width: 620px;
-      }
-
-      &_big .articles {
-
-        &-list-item {
-
-          &-figure {
-            width: 620px;
-            height: 480px;
-          }
-
-          &__link {
-            font-size: 24px;
-          }
-        }
-      }
-
-      &_long {
-        width: 300px;
-      }
-
-      & + &_long {
-        float: right;
-      }
-
-      &_long .articles {
-
-        &-list-item {
-
-          &-figure {
-            width: 300px;
-            height: 480px;
-          }
-
-          &__link {
-            font-size: 24px;
-          }
-        }
-      }
+      display: inline-block;
+      vertical-align: bottom;
+      width: 315px;
+      white-space: normal;
 
       &-figure {
         position: relative;
-        width: 300px;
-        height: 180px;
+        width: 315px;
+        height: 315px;
         overflow: hidden;
 
-        &:hover .feed-overlay {
+        &:hover .feed-overlay{
           opacity: 1;
         }
 
-        &:hover .articles-list-item__section {
+        &:hover .slider-list-item__section{
           opacity: 0;
         }
 
@@ -99,10 +55,10 @@
 
       &-title {
         margin: 0;
-        padding: 15px 30px;
+        padding: 25px 30px;
         text-align: center;
 
-        &:hover .articles-list-item__link {
+        &:hover .slider-list-item__link {
           background-color: fadeout(@default, 70%);
           box-shadow: 10px 0 0 fadeout(@default, 70%), -10px 0 0 fadeout(@default, 70%);
         }
@@ -111,7 +67,7 @@
       &__link {
         display: inline;
         font-family: 'RalewayBold';
-        font-size: 18px;
+        font-size: 21px;
         line-height: 1.5;
         color: @default-gray;
         text-decoration: none;

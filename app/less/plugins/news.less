@@ -1,19 +1,46 @@
 .news {
+  height: 100%;
 
   &-list {
+    .list-reset;
+    margin-top: 15px;
+    padding-right: 20px;
 
     &-item {
+      padding: 20px 0;
+
+      & + & {
+        border-top: 1px solid darken(@white, 8%);
+      }
 
       &-link {
+        text-decoration: none;
 
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       &-figure {
+        float: left;
+        width: 70px;
+        height: 70px;
+        margin-right: 20px;
 
-        &__image {}
+        &__image {
+          display: block;
+          max-width: 100%;
+          max-height: 100%;
+        }
       }
 
-      &__title {}
+      &__title {
+        overflow: hidden;
+        font-family: 'RalewayBold';
+        font-size: 15px;
+        color: @default-gray;
+        text-decoration: none;
+      }
     }
   }
 }
