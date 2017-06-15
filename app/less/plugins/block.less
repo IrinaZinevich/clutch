@@ -3,6 +3,11 @@
   margin: 40px 0;
 
   &-figure {
+    position: relative;
+
+    &:hover .feed-overlay {
+      opacity: 1;
+    }
 
     &__image {
       display: block;
@@ -53,12 +58,19 @@
   &-title {
     margin: auto;
 
+    &:hover .block-title__link {
+      background-color: fadeout(@default, 70%);
+      box-shadow: 10px 0 0 fadeout(@default, 70%), -10px 0 0 fadeout(@default, 70%);
+    }
+
     &__link {
       display: inline-block;
       font-family: 'RalewayBold';
-      font-size: 24px;
+      font-size: 22px;
+      line-height: 1.5;
       color: @default-gray;
       text-decoration: none;
+      .transition;
     }
   }
 }
