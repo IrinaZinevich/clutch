@@ -4,6 +4,7 @@
 
   &-figure {
     position: relative;
+    width: calc(~'100% - 235px');
 
     &:hover .feed-overlay {
       opacity: 1;
@@ -11,6 +12,8 @@
 
     &__image {
       display: block;
+      max-width: 100%;
+      height: 100%;
     }
   }
 
@@ -64,9 +67,8 @@
     }
 
     &__link {
-      display: inline-block;
       font-family: 'RalewayBold';
-      font-size: 22px;
+      font-size: 24px;
       line-height: 1.5;
       color: @default-gray;
       text-decoration: none;
